@@ -53,12 +53,12 @@ public class Bank_bms {
 		ResultSet rst = stmt1.executeQuery("select account_no from bank"); //Database query
 		while(rst.next()) { //Loop to check if there's anything at database
 			if(ac_no==rst.getInt(1)) { //To check if the account number is exist or not
-				count+=1;
+				count+=1; //If account number exist the count will increase by 1
 				System.out.println("Account already created with this account number........");				
 				throw new acalreadyexist("\nPlease check the account number carefully and re_enter the details...... ");
 				}
 			else {
-				count=-1;
+				count=-1; //If account number not exist the count will decrease by -1
 				}
 			}	
 		if(count==-1) { //If there is no account number same as user input
