@@ -73,7 +73,7 @@ public class Bank_bms {
 		ResultSet rst2 = stmt1.executeQuery("select account_no from bank");
 		if(rst2.next()==false) { //If the database is empty
 			System.out.println("Your account will be created shortly.....\n"
-					+ "No existing account found with this account number......");
+					+ "No existing account found with this account number......");...
 			PreparedStatement stmt = conn.prepareStatement("insert into bank values(?,?,?,?,?,?,?)");
 			stmt.setInt(1, ac_no); stmt.setString(2, ac_hol); stmt.setString(3, ifsc); stmt.setString(4, branch);
 			stmt.setString(5, ac_type); stmt.setDouble(6, bal); stmt.setInt(7, pin); stmt.executeUpdate();
