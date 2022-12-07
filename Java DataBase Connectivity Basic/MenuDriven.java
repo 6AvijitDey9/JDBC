@@ -13,7 +13,7 @@ public class MenuDriven {
 		String e_name, e_city;
 		public void saveMenuDriven() throws SQLException{
 			System.out.println("Enter Emp ID: ");
-			e_id = sc.nextInt();
+			e_id = sc.nextInt(); //Taking user inputs
 			System.out.println("Enter Emp name: ");
 			e_name = sc.next();
 			System.out.println("Enter Emp age: ");
@@ -22,9 +22,9 @@ public class MenuDriven {
 			e_city = sc.next();
 			System.out.println("Enter Emp salary: ");
 			e_salary = sc.nextInt();
-			Connection conn = Helper.con();
-			PreparedStatement stmt = conn.prepareStatement("Insert into MenuDriven values(?,?,?,?,?)");
-			stmt.setInt(1, e_id);
+			Connection conn = Helper.con(); //Connecting to database
+			PreparedStatement stmt = conn.prepareStatement("Insert into MenuDriven values(?,?,?,?,?)"); //Insert into database table
+			stmt.setInt(1, e_id); //Insert into database table in perticular column
 			stmt.setString(2, e_name);
 			stmt.setInt(3, e_age);
 			stmt.setString(4, e_city);
@@ -32,11 +32,11 @@ public class MenuDriven {
 			stmt.executeUpdate();
 		}
 		public void fetchMenuDriven() throws SQLException{
-			Connection conn = Helper.con();
-			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("select * from MenuDriven");
+			Connection conn = Helper.con(); //Connecting to database
+			Statement stmt = conn.createStatement(); 
+			ResultSet rs = stmt.executeQuery("select * from MenuDriven"); //Results from database will be stored in Resultset's object
 			while (rs.next()) {
-				System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3)+" "+rs.getString(4)+" "+rs.getInt(5));
+				System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3)+" "+rs.getString(4)+" "+rs.getInt(5)); //Print line
 			}
 		}
 		public void updateMenuDriven() throws SQLException{
@@ -44,14 +44,14 @@ public class MenuDriven {
 			Statement stmt = conn.createStatement();
 			System.out.println("Enter employee City: ");
 			e_city = sc.next();
-			stmt.executeUpdate("update MenuDriven set e_city= '"+e_city+"' where e_id= "+e_id);
+			stmt.executeUpdate("update MenuDriven set e_city= '"+e_city+"' where e_id= "+e_id); //Excute update on database
 		}
 		public void deleteMenuDriven() throws SQLException{
 			Connection conn = Helper.con();
 			Statement stmt = conn.createStatement();
 			System.out.println("Enter employee Id: ");
 			e_id = sc.nextInt();
-			stmt.executeUpdate("Delete from MenuDriven where e_id= "+e_id);
+			stmt.executeUpdate("Delete from MenuDriven where e_id= "+e_id); //Excute update on database
 		}
 	}
 
