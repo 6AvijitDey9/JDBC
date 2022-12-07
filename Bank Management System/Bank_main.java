@@ -12,14 +12,14 @@ public class Bank_main {
 			System.out.println("....................................\n"
 					+ "You have sucessfully exited from our server......\n"
 					+ "Thank you for using our service......\nPlease visit back soon.........");
-			return;
+			return; // It will return to switch loop
 		}
 		else if(variable==1) {
-		  main(null);
+		  main(null); // It will return to the main method
 		}
 		else {
 			System.out.println("Please choose a valid option :");
-			stop();
+			stop(); //It will repeat the stop method
 		}
 	}
 	public static void main(String[] args) throws SQLException  { //Main Method
