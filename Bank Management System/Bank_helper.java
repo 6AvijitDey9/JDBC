@@ -10,6 +10,6 @@ import java.sql.*;
 			}
 		}
 		public static Connection con() throws SQLException{
-			return DriverManager.getConnection("jdbc:mysql://localhost:3306/assignments", "root", "root");
+			return DriverManager.getConnection("jdbc:mysql://localhost:3306/assignments", "root", "root"); //Connecting to database using UserId and Password
 		}
 }
